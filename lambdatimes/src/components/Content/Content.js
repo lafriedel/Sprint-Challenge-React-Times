@@ -43,6 +43,7 @@ export default class Content extends Component {
   };
 
   render() {
+    console.log(this.state.tabs)
     return (
       <div className="content-container">
         {/* 

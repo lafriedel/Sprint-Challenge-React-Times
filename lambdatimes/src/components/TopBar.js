@@ -14,6 +14,7 @@ flex-direction: row;
 position: fixed;
 height: 44px;
 background-color: #333;
+z-index: 2;
 `;
 
 const ContainerDiv = styled.div`

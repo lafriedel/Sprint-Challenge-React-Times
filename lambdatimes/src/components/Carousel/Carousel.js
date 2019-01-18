@@ -20,7 +20,7 @@ export default class Carousel extends Component {
 
   leftClick = () => {
     if (this.state.index <= 3) {
-      this.setState(prevState => ({index: --this.state.index, displayedImg: carouselData[this.state.index]}))
+      this.setState(prevState => ({index: --prevState.index, displayedImg: carouselData[this.state.index]}))
     } 
 
     if (this.state.index === 0) {
@@ -34,7 +34,7 @@ export default class Carousel extends Component {
 
   rightClick = () => {
     if (this.state.index < 3) {
-      this.setState(prevState => ({index: ++this.state.index, displayedImg: carouselData[this.state.index]}))
+      this.setState(prevState => ({index: ++prevState.index, displayedImg: carouselData[this.state.index]}))
     } else {
       this.setState({
         index: 0,
@@ -45,7 +45,7 @@ export default class Carousel extends Component {
   }
 
   selectedImage = () => {
-    return <img src={this.state.displayedImg} style={{display: 'block'}} />
+    return <img src={this.state.displayedImg} alt="featured" style={{display: 'block'}} />
   }
   
   render(){

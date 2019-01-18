@@ -84,9 +84,15 @@ span {
 
 
 class TopBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false
+    }
+  }
 
   login = () => {
-    return <LoginPage />
+    return <LoginPage loggedIn={this.state.loggedIn} />
   };
 
   render() {

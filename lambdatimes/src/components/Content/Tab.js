@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Tab = props => {
-console.log(props.selectTabHandler)
   let tabClassName = "";
 
   if (props.selectedTab === props.tab) {

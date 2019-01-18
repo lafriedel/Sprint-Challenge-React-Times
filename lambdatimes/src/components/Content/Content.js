@@ -37,16 +37,23 @@ export default class Content extends Component {
       Notice that we're passing this function to our <Cards /> component below.
       This function returns an array of cards, so we can just pass it down as such.
 
+
       Your algorithim for the logic here is as follows: 
         - if the selected tab is 'all' it should return all 
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
-    return this.state.cards;
+
+    if (this.state.selected === "all") {
+      return this.state.cards;
+    } else {
+      return this.state.cards.filter(card => card.tab === this.state.selected)
+      }
+
   };
 
   render() {
-    console.log(this.state.tabs)
+    console.log(this.state.cards)
     return (
       <div className="content-container">
         {/* 

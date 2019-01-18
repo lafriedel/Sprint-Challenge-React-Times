@@ -19,7 +19,17 @@ export default class Carousel extends Component {
   }
 
   leftClick = () => {
+    if (this.state.index <= 3) {
+      this.setState(prevState => ({index: --this.state.index, displayedImg: carouselData[this.state.index]}))
+    } 
 
+    if (this.state.index === 0) {
+      this.setState({
+        index: 3,
+        displayedImg: carouselData[3]
+      })
+    }
+    
   }
 
   rightClick = () => {

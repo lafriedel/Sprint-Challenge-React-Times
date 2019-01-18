@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import LoginPage from './Login/LoginPage';
 import styled from 'styled-components';
+
 
 // Refactor this component to use styled components and not classNames. 
 // You can find the corresponding CSS in the CSS/index.css file
@@ -81,22 +83,30 @@ span {
 `;
 
 
-const TopBar = () => {
-  return (
-    <TopBarDiv>
-      <ContainerDiv>
-        <ContainerLeftDiv>
-          <span>TOPICS</span><span>SEARCH</span>
-        </ContainerLeftDiv>
-        <ContainerCenterDiv>
-          <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
-        </ContainerCenterDiv>
-        <ContainerRightDiv>
-          <span>LOG IN</span>
-        </ContainerRightDiv>
-      </ContainerDiv>
-    </TopBarDiv>
-  )
+class TopBar extends Component {
+
+  login = () => {
+    return <LoginPage />
+  };
+
+  render() {
+    return (
+      <TopBarDiv>
+        <ContainerDiv>
+          <ContainerLeftDiv>
+            <span>TOPICS</span><span>SEARCH</span>
+          </ContainerLeftDiv>
+          <ContainerCenterDiv>
+            <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
+          </ContainerCenterDiv>
+          <ContainerRightDiv>
+            <span onClick={this.login}>LOG IN</span>
+          </ContainerRightDiv>
+        </ContainerDiv>
+      </TopBarDiv>
+    )
+  }
+
 }
 
 export default TopBar;
